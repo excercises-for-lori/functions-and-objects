@@ -28,7 +28,8 @@ gulp.task 'test', ->
       reporter  : 'spec'
       compilers : 'coffee:coffee-script'
     .once 'error', (error) ->
-      console.error 'Tests failed', error
+      console.error 'Tests failed'
+      console.error error.stack
       if development
         return @emit 'end'
       else
