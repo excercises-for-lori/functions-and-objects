@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/excercises-for-lori/functions-and-objects#readme",
   "devDependencies": {
+    "chai": "^2.3.0",
     "coffee-script": "^1.9.2",
     "del": "^1.1.1",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
