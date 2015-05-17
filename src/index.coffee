@@ -1,1 +1,5 @@
-exports = 1
+module.exports =
+  species : 'cat'
+  name : 'Skubi'
+  sound : ->
+    this.name + ': ' + 'miał!'
