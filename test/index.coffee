@@ -23,3 +23,11 @@ describe 'Module', ->
         .to.have.property 'name'
         .which.is.a       'string'
         .and.is.eql       'Skubi'
+
+    it 'has a method sound that returns a name and voice', ->
+      expect obj
+        .to.have.property 'sound'
+        .which.is.a       'function'
+
+      expect obj.sound()
+        .to.eql 'Skubi: miał!'
