@@ -1,33 +1,46 @@
-{ expect } = require 'chai'
+{ expect }  = require 'chai'
+
+Cat         = require '..'
 
 describe 'Module', ->
   it 'can be required', ->
     require '..'
 
-  it 'exports an object', ->
-    mod = require '..'
-    expect mod
+describe 'Class', ->
+
+  it 'is a function', ->
+    expect Cat
+      .to.be.a 'function'
+
+  it 'is a constructor', ->
+    expect new Cat
       .to.be.an 'object'
 
-  describe 'object', ->
-    obj = require '..'
+  it 'can take name argument', ->
+    expect new Cat 'Skubi'
+      .to.be.an       'object'
+      .with.property  'name'
+      .that.is.eql    'Skubi'
 
-    it 'has a property species that equals cat', ->
-      expect obj
-        .to.have.property 'species'
-        .which.is.a       'string'
-        .and.is.eql       'cat'
+describe 'Instance', ->
+  cat = new Cat 'Katiusza'
 
-    it 'has a property name that equals Skubi', ->
-      expect obj
-        .to.have.property 'name'
-        .which.is.a       'string'
-        .and.is.eql       'Skubi'
+  it 'has a property species that equals cat', ->
+    expect cat
+      .to.have.property 'species'
+      .which.is.a       'string'
+      .and.is.eql       'cat'
 
-    it 'has a method sound that returns a name and voice', ->
-      expect obj
-        .to.have.property 'sound'
-        .which.is.a       'function'
+  it 'has a property name that equals the value of an argument', ->
+    expect cat
+      .to.have.property 'name'
+      .which.is.a       'string'
+      .and.is.eql       'Katiusza'
 
-      expect obj.sound()
-        .to.eql 'Skubi: miał!'
+  it 'has a method sound that returns a name and voice', ->
+    expect cat
+      .to.have.property 'sound'
+      .which.is.a       'function'
+
+    expect cat.sound()
+      .to.eql 'Katiusza: meow!'
