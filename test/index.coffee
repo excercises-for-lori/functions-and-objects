@@ -44,3 +44,13 @@ describe 'Instance', ->
 
     expect cat.sound()
       .to.eql 'Katiusza: meow!'
+
+  it 'is different then the other instance', ->
+    cat1 = new Cat 'Katiusza'
+    cat2 = new Cat 'George'
+
+    expect cat1
+      .not.to.be cat2
+
+    expect cat1.sound()
+      .not.to.eql cat2.sound()
