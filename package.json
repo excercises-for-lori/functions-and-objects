@@ -1,0 +1,19 @@
+{
+  "name": "functions-and-objects",
+  "version": "0.0.0",
+  "description": "Excercises regarding functions and objects in JavaScript",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/excercises-for-lori/functions-and-objects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/excercises-for-lori/functions-and-objects/issues"
+  },
+  "homepage": "https://github.com/excercises-for-lori/functions-and-objects#readme"
+}
